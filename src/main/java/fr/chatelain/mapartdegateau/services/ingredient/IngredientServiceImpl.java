@@ -22,4 +22,9 @@ public class IngredientServiceImpl implements IIngredientService{
     public List<Ingredient> findAllByLibelleLikeIgnoreCase(String libelle) {
         return ingredientRepository.findAllByLibelleLikeIgnoreCase(libelle);
     }
+
+    @Override
+    public void deleteById(String id) {
+        ingredientRepository.deleteById(id);
+    }
 }

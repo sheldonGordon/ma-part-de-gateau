@@ -7,4 +7,6 @@ public interface IPrixService {
     Prix saveOrUpdatePrix(Prix prix);
 
     Prix findPrixById(String id);
+
+    void deleteById(String id);
 }

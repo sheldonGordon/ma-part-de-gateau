@@ -22,4 +22,9 @@ public class IngredientPreparationServiceImpl implements IIngredientPreparationS
     public List<IngredientPreparation> getAllById(List<String> listeIds) {
         return ingredientPreparationRepository.getAllById(listeIds);
     }
+
+    @Override
+    public void deleteById(String id) {
+        ingredientPreparationRepository.deleteById(id);
+    }
 }

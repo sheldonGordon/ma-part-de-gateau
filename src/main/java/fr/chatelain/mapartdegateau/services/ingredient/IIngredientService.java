@@ -9,4 +9,6 @@ public interface IIngredientService {
     Ingredient saveOrUpdateIngredient(Ingredient ingredient);
 
     List<Ingredient> findAllByLibelleLikeIgnoreCase(String libelle);
+
+    void deleteById(String id);
 }

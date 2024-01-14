@@ -11,4 +11,6 @@ public interface IPreparationService {
     Preparation getPreparationById(String id);
 
     List<Preparation> getAllById(List<String> listeIds);
+
+    void deleteById(String id);
 }

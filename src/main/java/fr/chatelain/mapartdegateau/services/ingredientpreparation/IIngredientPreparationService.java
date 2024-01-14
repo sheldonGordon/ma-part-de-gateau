@@ -9,4 +9,6 @@ public interface IIngredientPreparationService {
     IngredientPreparation saveOrUpdateIngredientPreparation(IngredientPreparation ingredientPreparation);
 
     List<IngredientPreparation> getAllById(List<String> listeIds);
+
+    void deleteById(String id);
 }

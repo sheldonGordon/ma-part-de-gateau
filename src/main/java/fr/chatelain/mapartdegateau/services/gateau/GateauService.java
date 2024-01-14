@@ -19,4 +19,9 @@ public class GateauService implements IGateauService{
     public Gateau getGateauById(String id) {
         return gateauRepository.getGateauById(id);
     }
+
+    @Override
+    public void deleteById(String id) {
+        gateauRepository.deleteById(id);
+    }
 }

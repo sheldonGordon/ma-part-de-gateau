@@ -7,4 +7,6 @@ public interface IGateauService {
     Gateau saveOrUpdateGateau(Gateau gateau);
 
     Gateau getGateauById(String id);
+
+    void deleteById(String id);
 }

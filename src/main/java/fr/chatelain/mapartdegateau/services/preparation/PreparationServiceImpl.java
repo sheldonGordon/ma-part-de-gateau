@@ -27,4 +27,9 @@ public class PreparationServiceImpl implements IPreparationService{
     public List<Preparation> getAllById(List<String> listeIds) {
         return preparationRepository.getAllById(listeIds);
     }
+
+    @Override
+    public void deleteById(String id) {
+        preparationRepository.deleteById(id);
+    }
 }

@@ -20,4 +20,9 @@ public class PrixServiceImpl implements IPrixService{
     public Prix findPrixById(String id) {
         return prixRepository.findPrixById(id);
     }
+
+    @Override
+    public void deleteById(String id) {
+        prixRepository.deleteById(id);
+    }
 }
