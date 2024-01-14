@@ -25,7 +25,7 @@ public class PreparationServiceImpl implements IPreparationService{
 
     @Override
     public List<Preparation> getAllById(List<String> listeIds) {
-        return preparationRepository.getAllById(listeIds);
+        return preparationRepository.getAllByIdIn(listeIds);
     }
 
     @Override

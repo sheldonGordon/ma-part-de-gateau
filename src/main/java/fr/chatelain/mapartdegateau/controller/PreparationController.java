@@ -28,7 +28,7 @@ public class PreparationController {
         return preparationService.saveOrUpdatePreparation(preparation);
     }
 
-    @GetMapping("/preparations/{id}")
+    @DeleteMapping("/preparations/{id}")
     public void deletePreparation(@PathVariable("id") String id){
         preparationService.deleteById(id);
     }

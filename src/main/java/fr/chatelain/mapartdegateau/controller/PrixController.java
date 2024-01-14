@@ -26,7 +26,7 @@ public class PrixController {
         return prixService.saveOrUpdatePrix(prix);
     }
 
-    @GetMapping("/prix/{id}")
+    @DeleteMapping("/prix/{id}")
     public void deletePrix(@PathVariable("id") String id){
         prixService.deleteById(id);
     }

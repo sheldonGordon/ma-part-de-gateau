@@ -30,7 +30,7 @@ public class GateauController {
         return gateauService.saveOrUpdateGateau(gateau);
     }
 
-    @GetMapping("/gateaux/{id}")
+    @DeleteMapping("/gateaux/{id}")
     public void deleteGateau(@PathVariable("id") String id){
         gateauService.deleteById(id);
     }

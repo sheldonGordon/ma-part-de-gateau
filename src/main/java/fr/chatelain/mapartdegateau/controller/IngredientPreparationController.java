@@ -18,7 +18,7 @@ public class IngredientPreparationController {
         return ingredientPreparationService.saveOrUpdateIngredientPreparation(ingredientPreparation);
     }
 
-    @GetMapping("/ingredients-preparations/ids")
+    @DeleteMapping("/ingredients-preparations/ids")
     public List<IngredientPreparation> getAllById(@RequestBody List<String> listeIds){
         return ingredientPreparationService.getAllById(listeIds);
     }

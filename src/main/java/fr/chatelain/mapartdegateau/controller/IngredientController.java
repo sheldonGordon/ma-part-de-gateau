@@ -28,7 +28,7 @@ public class IngredientController {
         return ingredientService.saveOrUpdateIngredient(ingredient);
     }
 
-    @GetMapping("/ingredients/{id}")
+    @DeleteMapping("/ingredients/{id}")
     public void deleteIngredient(@PathVariable("id") String id){
         ingredientService.deleteById(id);
     }

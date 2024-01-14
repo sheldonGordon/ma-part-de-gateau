@@ -20,7 +20,7 @@ public class IngredientPreparationServiceImpl implements IIngredientPreparationS
 
     @Override
     public List<IngredientPreparation> getAllById(List<String> listeIds) {
-        return ingredientPreparationRepository.getAllById(listeIds);
+        return ingredientPreparationRepository.getAllByIdIn(listeIds);
     }
 
     @Override
