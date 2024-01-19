@@ -1,6 +1,6 @@
 package fr.chatelain.mapartdegateau.controller;
 
-import fr.chatelain.mapartdegateau.entities.Prix;
+import fr.chatelain.mapartdegateau.dto.PrixDto;
 import fr.chatelain.mapartdegateau.services.prix.IPrixService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,18 +12,18 @@ public class PrixController {
     private IPrixService prixService;
 
     @PostMapping("/prix")
-    public Prix savePrix(@RequestBody Prix prix){
-        return prixService.saveOrUpdatePrix(prix);
+    public PrixDto savePrix(@RequestBody PrixDto prixDto){
+        return prixService.saveOrUpdatePrix(prixDto);
     }
 
     @GetMapping("/prix/{id}")
-    public Prix getPrix(@PathVariable("id") String id){
+    public PrixDto getPrix(@PathVariable("id") String id){
         return prixService.findPrixById(id);
     }
 
     @PutMapping("/prix")
-    public Prix updatePrix(@RequestBody Prix prix){
-        return prixService.saveOrUpdatePrix(prix);
+    public PrixDto updatePrix(@RequestBody PrixDto prixDto){
+        return prixService.saveOrUpdatePrix(prixDto);
     }
 
     @DeleteMapping("/prix/{id}")

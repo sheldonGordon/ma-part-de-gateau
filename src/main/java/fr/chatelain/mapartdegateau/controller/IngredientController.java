@@ -1,6 +1,8 @@
 package fr.chatelain.mapartdegateau.controller;
 
+import fr.chatelain.mapartdegateau.dto.IngredientDto;
 import fr.chatelain.mapartdegateau.entities.Ingredient;
+import fr.chatelain.mapartdegateau.mappers.MapperIngredient;
 import fr.chatelain.mapartdegateau.services.ingredient.IIngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,18 +16,18 @@ public class IngredientController {
     private IIngredientService ingredientService;
 
     @PostMapping("/ingredient")
-    public Ingredient saveIngredient(@RequestBody Ingredient ingredient){
-        return ingredientService.saveOrUpdateIngredient(ingredient);
+    public IngredientDto saveIngredient(@RequestBody IngredientDto ingredientDto){
+        return ingredientService.saveOrUpdateIngredient(ingredientDto);
     }
 
     @GetMapping("/ingredients/libelle/{libelle}")
-    public List<Ingredient> getIngredientByLibelle(@PathVariable("libelle") String libelle){
+    public List<IngredientDto> getIngredientByLibelle(@PathVariable("libelle") String libelle){
         return ingredientService.findAllByLibelleLikeIgnoreCase(libelle);
     }
 
     @PutMapping("/ingredient")
-    public Ingredient updateIngredient(@RequestBody Ingredient ingredient){
-        return ingredientService.saveOrUpdateIngredient(ingredient);
+    public IngredientDto updateIngredient(@RequestBody IngredientDto ingredientDto){
+        return ingredientService.saveOrUpdateIngredient(ingredientDto);
     }
 
     @DeleteMapping("/ingredients/{id}")

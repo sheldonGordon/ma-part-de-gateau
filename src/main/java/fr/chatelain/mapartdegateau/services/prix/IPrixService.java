@@ -1,12 +1,12 @@
 package fr.chatelain.mapartdegateau.services.prix;
 
-import fr.chatelain.mapartdegateau.entities.Prix;
+import fr.chatelain.mapartdegateau.dto.PrixDto;
 
 public interface IPrixService {
 
-    Prix saveOrUpdatePrix(Prix prix);
+    PrixDto saveOrUpdatePrix(PrixDto prixDto);
 
-    Prix findPrixById(String id);
+    PrixDto findPrixById(String id);
 
     void deleteById(String id);
 }

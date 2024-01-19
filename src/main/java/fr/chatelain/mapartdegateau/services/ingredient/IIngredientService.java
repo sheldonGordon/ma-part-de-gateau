@@ -1,14 +1,14 @@
 package fr.chatelain.mapartdegateau.services.ingredient;
 
-import fr.chatelain.mapartdegateau.entities.Ingredient;
+import fr.chatelain.mapartdegateau.dto.IngredientDto;
 
 import java.util.List;
 
 public interface IIngredientService {
 
-    Ingredient saveOrUpdateIngredient(Ingredient ingredient);
+    IngredientDto saveOrUpdateIngredient(IngredientDto ingredientDto);
 
-    List<Ingredient> findAllByLibelleLikeIgnoreCase(String libelle);
+    List<IngredientDto> findAllByLibelleLikeIgnoreCase(String libelle);
 
     void deleteById(String id);
 }
