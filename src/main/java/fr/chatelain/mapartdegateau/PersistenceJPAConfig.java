@@ -1,9 +1,9 @@
-package fr.chatelain.mapartdegateau.configuration;
+package fr.chatelain.mapartdegateau;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = "fr.chatelain.mapartdegateau.repositories")
 public class PersistenceJPAConfig {
 }
