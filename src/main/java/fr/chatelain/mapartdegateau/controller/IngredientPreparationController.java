@@ -1,6 +1,6 @@
 package fr.chatelain.mapartdegateau.controller;
 
-import fr.chatelain.mapartdegateau.entities.IngredientPreparation;
+import fr.chatelain.mapartdegateau.dto.IngredientPreparationDto;
 import fr.chatelain.mapartdegateau.services.ingredientpreparation.IIngredientPreparationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,18 +14,18 @@ public class IngredientPreparationController {
     private IIngredientPreparationService ingredientPreparationService;
 
     @PostMapping("/ingredient-preparation")
-    public IngredientPreparation saveIngredientPreparation(@RequestBody IngredientPreparation ingredientPreparation){
-        return ingredientPreparationService.saveOrUpdateIngredientPreparation(ingredientPreparation);
+    public IngredientPreparationDto saveIngredientPreparation(@RequestBody IngredientPreparationDto ingredientPreparationDto){
+        return ingredientPreparationService.saveOrUpdateIngredientPreparation(ingredientPreparationDto);
     }
 
     @DeleteMapping("/ingredients-preparations/ids")
-    public List<IngredientPreparation> getAllById(@RequestBody List<String> listeIds){
+    public List<IngredientPreparationDto> getAllById(@RequestBody List<String> listeIds){
         return ingredientPreparationService.getAllById(listeIds);
     }
 
     @PutMapping("/ingredient-preparation")
-    public IngredientPreparation updateIngredientPreparation(@RequestBody IngredientPreparation ingredientPreparation){
-        return ingredientPreparationService.saveOrUpdateIngredientPreparation(ingredientPreparation);
+    public IngredientPreparationDto updateIngredientPreparation(@RequestBody IngredientPreparationDto ingredientPreparationDto){
+        return ingredientPreparationService.saveOrUpdateIngredientPreparation(ingredientPreparationDto);
     }
 
     @GetMapping("/ingredients-preparations/{id}")

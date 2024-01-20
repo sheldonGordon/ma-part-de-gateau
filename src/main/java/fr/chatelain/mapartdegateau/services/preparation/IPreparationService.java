@@ -1,16 +1,16 @@
 package fr.chatelain.mapartdegateau.services.preparation;
 
-import fr.chatelain.mapartdegateau.entities.Preparation;
+import fr.chatelain.mapartdegateau.dto.PreparationDto;
 
 import java.util.List;
 
 public interface IPreparationService {
 
-    Preparation saveOrUpdatePreparation(Preparation preparation);
+    PreparationDto saveOrUpdatePreparation(PreparationDto preparationDto);
 
-    Preparation getPreparationById(String id);
+    PreparationDto getPreparationById(String id);
 
-    List<Preparation> getAllById(List<String> listeIds);
+    List<PreparationDto> getAllById(List<String> listeIds);
 
     void deleteById(String id);
 }

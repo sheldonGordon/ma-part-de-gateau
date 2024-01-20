@@ -1,12 +1,13 @@
 package fr.chatelain.mapartdegateau.services.gateau;
 
+import fr.chatelain.mapartdegateau.dto.GateauDto;
 import fr.chatelain.mapartdegateau.entities.Gateau;
 
 public interface IGateauService {
 
-    Gateau saveOrUpdateGateau(Gateau gateau);
+    GateauDto saveOrUpdateGateau(GateauDto gateauDto);
 
-    Gateau getGateauById(String id);
+    GateauDto getGateauById(String id);
 
     void deleteById(String id);
 }

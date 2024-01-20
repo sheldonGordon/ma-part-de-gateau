@@ -1,13 +1,9 @@
 package fr.chatelain.mapartdegateau.controller;
 
-import fr.chatelain.mapartdegateau.entities.Gateau;
-import fr.chatelain.mapartdegateau.entities.Ingredient;
+import fr.chatelain.mapartdegateau.dto.GateauDto;
 import fr.chatelain.mapartdegateau.services.gateau.IGateauService;
-import fr.chatelain.mapartdegateau.services.ingredient.IIngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class GateauController {
@@ -16,18 +12,18 @@ public class GateauController {
     private IGateauService gateauService;
 
     @PostMapping("/gateau")
-    public Gateau saveGateau(@RequestBody Gateau gateau){
-        return gateauService.saveOrUpdateGateau(gateau);
+    public GateauDto saveGateau(@RequestBody GateauDto gateauDto){
+        return gateauService.saveOrUpdateGateau(gateauDto);
     }
 
     @GetMapping("/gateaux/{id}")
-    public Gateau getGateau(@PathVariable("id") String id){
+    public GateauDto getGateau(@PathVariable("id") String id){
         return gateauService.getGateauById(id);
     }
 
     @PutMapping("/gateau")
-    public Gateau updateGateau(@RequestBody Gateau gateau){
-        return gateauService.saveOrUpdateGateau(gateau);
+    public GateauDto updateGateau(@RequestBody GateauDto gateauDto){
+        return gateauService.saveOrUpdateGateau(gateauDto);
     }
 
     @DeleteMapping("/gateaux/{id}")

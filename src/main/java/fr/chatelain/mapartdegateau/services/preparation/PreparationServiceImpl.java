@@ -1,6 +1,8 @@
 package fr.chatelain.mapartdegateau.services.preparation;
 
+import fr.chatelain.mapartdegateau.dto.PreparationDto;
 import fr.chatelain.mapartdegateau.entities.Preparation;
+import fr.chatelain.mapartdegateau.mappers.MapperPreparation;
 import fr.chatelain.mapartdegateau.repositories.IPreparationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,19 +15,29 @@ public class PreparationServiceImpl implements IPreparationService{
     @Autowired
     private IPreparationRepository preparationRepository;
 
-    @Override
-    public Preparation saveOrUpdatePreparation(Preparation preparation) {
-        return preparationRepository.save(preparation);
+    private final MapperPreparation mapperPreparation;
+
+    public PreparationServiceImpl() {
+        this.mapperPreparation = new MapperPreparation();
     }
 
     @Override
-    public Preparation getPreparationById(String id) {
-        return preparationRepository.getPreparationById(id);
+    public PreparationDto saveOrUpdatePreparation(PreparationDto preparationDto) {
+        Preparation preparationToSave = mapperPreparation.mapToEntity(preparationDto);
+        Preparation preparationSave = preparationRepository.save(preparationToSave);
+        return mapperPreparation.mapToDto(preparationSave);
     }
 
     @Override
-    public List<Preparation> getAllById(List<String> listeIds) {
-        return preparationRepository.getAllByIdIn(listeIds);
+    public PreparationDto getPreparationById(String id) {
+        Preparation preparationFind = preparationRepository.getPreparationById(id);
+        return mapperPreparation.mapToDto(preparationFind);
+    }
+
+    @Override
+    public List<PreparationDto> getAllById(List<String> listeIds) {
+        List<Preparation> listePreparation = preparationRepository.getAllByIdIn(listeIds);
+        return mapperPreparation.mapToListDto(listePreparation);
     }
 
     @Override
